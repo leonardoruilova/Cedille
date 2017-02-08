@@ -1,14 +1,16 @@
-# The Cédlle Microkernel
+# Microkernel Cédlle 
 
 
-The Cédille Microkernel is a microkernel designed to keep a lot of running code outside of the kernel. This means that Cédille is inherently more stable and secure, as core services are run with lowered permissions. Core services are run as daemons in userspace with the same (but possibly heightend) permissions as other processes.
+El Microkernel Cédille esta disenado para mantener much codigo en ejecucion fuera del nucleo. Esto implica que Cédille es inherentemente mas estable y seguro ya que sus servicios mas importantes son ejecutados con menores permisos. Los servicios mas importantes son ejecutados como daemons en espacio de usuario con los mismos  permisos (but possibly heightend) tal como otros procesos.
 
-Cédille takes alot of insperation from BSD, as well as the Mach Kernel. The process model takes some insperation from Mach - It uses tasks instead of processes, and uses ports for IPC.
-However, Cédille is NOT Mach, nor is it any other kernel. It is just inspired by it. Cédille aims to be more UNIX like then Mach, but still have its own thing going.
+En el Microkernel Cédille utilizamos mucho de BSD asi como del modelo de procesos del nucleo Mach. Especificamente, utilizamos tareas en vez de procesos y utilizamos ports para IPC.
 
-### License
+Sin embargo el Microkernel Cédille no es Mach ni algun otro nucleo de comun uso, es un proyecto diferente, inspirado por los anteriores. 
+En el Microkernel Cédille  existe un interes de lograr mas cualidades UNIX que en Mach, but still have its own thing going.
 
-This project uses the MIT license:
+### Licencia
+
+Este proyecto esta liberado bajo la licencia MIT:
 ```
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -28,16 +30,22 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-## Building
+## Compilacion
 
 
-1. Get a working implementation of gcc / clang / whatever you use to compile.
-2. Make sure it cross compiles correctly, and targets the correct thing.
-3. Determine an output system (iso,image,elf). If you can't decide, just build an elf for now. (Use `make kernel`)
-4. Build the kernel by passing the compiler options directly in from the command line
+1. Por favor utilice una implementacion de gcc / clang / para compilar.
+2. Asegurese que cross compiles correctly, and targets the correct thing.
+3. Determine un sistema de salida como iso,imagen o elf. If you can't decide, just build an elf for now. (Use `make kernel`)
+4. Compile el kernel entregando al compilador las opciones directamente mediante la linea de comandos
 
-Example:
+Ejemplo:
 On my host machine for building x86:
 `make CC=i686-elf-gcc LD=i686-elf-gcc GENISO=genisoimage` which I have aliased to `make_kernel` in bash
 
-Read `doc/Porting Architecture.md` for more info.
+Por favor, lea `doc/Porting Architecture.md` para mayor informacion.
+
+
+## Spanish translation
+
+
+Esta traduccion ha sido liberada a los Comunes bajo una licencia CC-BY-NC-SA, su autor es Virgilio Leonardo Ruilova
